@@ -1,23 +1,129 @@
 # 🎓 Student Reclamation Portal
 
-A modern, attractive static website for students to submit their reclamations to university administration via Telegram bot integration.
+A secure, modern web application for **Badji Mokhtar University** students (Master in Network & Cybersecurity) to submit reclamations directly to faculty administration via Telegram.
+
+---
+
+## ⚡ Quick Start
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Run security tests
+./test-security.sh
+```
+
+Visit: http://localhost:3000
+
+---
+
+## 🌟 Key Features
+
+- ✅ **Modern UI/UX** - Glassmorphism design with smooth animations
+- ✅ **Telegram Integration** - Real-time notifications to administrators
+- ✅ **Searchable Student Select** - 41 students from validated list
+- ✅ **10 Security Layers** - Rate limiting, spam detection, XSS protection
+- ✅ **Form Validation** - Client and server-side validation
+- ✅ **Responsive Design** - Works on mobile, tablet, and desktop
+- ✅ **Type-Safe** - Full TypeScript coverage
+- ✅ **Production Ready** - Optimized for Vercel deployment
+
+---
+
+## 🔒 Security Status: HIGH
+
+**Protected Against:**
+- DOS/DDOS attacks (rate limiting)
+- Spam submissions (keyword detection)
+- Fake student reports (validation)
+- XSS attacks (pattern detection)
+- CSRF attacks (same-origin policy)
+- Brute force (rate limiting)
+
+---
+
+## 📚 Complete Documentation
+
+| Document | Description | When to Read |
+|----------|-------------|--------------|
+| **[QUICK-REFERENCE.md](QUICK-REFERENCE.md)** | Commands & quick tips | Start here! |
+| **[PROJECT-SUMMARY.md](PROJECT-SUMMARY.md)** | Complete feature overview | Understand the project |
+| **[SETUP.md](SETUP.md)** | Installation guide | First-time setup |
+| **[SECURITY.md](SECURITY.md)** | Security implementation | Understanding protection |
+| **[TESTING.md](TESTING.md)** | Testing procedures | Before deployment |
+| **[VERCEL-DEPLOYMENT.md](VERCEL-DEPLOYMENT.md)** | Deployment steps | Ready to deploy |
+| **[README-NEXTJS.md](README-NEXTJS.md)** | Full technical docs | Deep dive |
+
+---
+
+## 🚀 Deployment Status
+
+- [x] Development complete
+- [x] Security implemented
+- [x] Documentation complete
+- [x] Test scripts ready
+- [ ] **Deploy to Vercel** ← Next step!
+
+**Ready for production deployment** 🎉
+
+---
+
+## 🔑 Environment Variables
+
+Required in `.env.local`:
+```env
+TELEGRAM_BOT_TOKEN=your_bot_token_here
+TELEGRAM_CHAT_ID=your_chat_id_here
+```
+
+✅ Already configured for this project
+
+---
+
+## � Testing
+
+Run the automated security test suite:
+
+```bash
+./test-security.sh
+```
+
+**Tests 8 security features:**
+1. Valid submission
+2. Rate limiting
+3. Invalid student name
+4. Spam detection
+5. XSS prevention
+6. Short message rejection
+7. Invalid email format
+8. Missing fields
+
+See [TESTING.md](TESTING.md) for manual testing procedures.
+
+---
+
+## 🎯 Tech Stack
+
+- **Framework:** Next.js 14 (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **Animations:** Framer Motion
+- **Icons:** Lucide React
+- **Deployment:** Vercel
+- **Security:** Custom rate limiting + validation
+
+---
 
 ## 🏛️ University Information
 
-- **University:** Badji Mokhtar University
-- **Faculty:** Faculty of Technology
-- **Department:** Computer Science
-- **Speciality:** Master in Cybersecurity
-
-## ✨ Features
-
-- 🎨 **Modern UI/UX Design** - Beautiful glassmorphism effects with gradient backgrounds
-- 🌊 **Smooth Animations** - Floating shapes, scroll effects, and interactive elements
-- 📱 **Fully Responsive** - Works perfectly on desktop, tablet, and mobile devices
-- 🤖 **Telegram Integration** - Automatic submission to Telegram bot
-- ✅ **Form Validation** - Real-time validation with helpful error messages
-- 🔒 **Secure & Private** - All data is transmitted securely
-- ⚡ **Fast & Lightweight** - No heavy frameworks, pure vanilla JavaScript
+**Institution:** Badji Mokhtar University  
+**Faculty:** Faculty of Technology  
+**Department:** Computer Science  
+**Program:** Master in Network & Cybersecurity
 - 🎭 **Interactive Elements** - Hover effects, loading states, and animations
 
 ## 🚀 Getting Started
