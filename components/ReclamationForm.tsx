@@ -5,6 +5,8 @@ import { motion } from 'framer-motion'
 import { Send, User, Tag, MessageSquare, Mail, Loader2 } from 'lucide-react'
 import toast from 'react-hot-toast'
 import { cn } from '@/lib/utils'
+import { SearchableSelect } from './SearchableSelect'
+import studentsData from '@/lib/students.json'
 
 interface FormData {
   studentName: string
@@ -13,18 +15,11 @@ interface FormData {
   email: string
 }
 
-const students = [
-  'ACHEUK Achraf',
-  'BENALI Mohammed',
-  'CHERIF Amina',
-  'DAOUDI Yasmine',
-  'HAMIDI Karim',
-  'KADDOUR Sarah',
-  'MANSOURI Rania',
-  'MEZIANE Bilal',
-  'SAIDI Nour',
-  'ZERROUKI Mehdi',
-]
+interface Student {
+  no: number
+  last_name: string
+  first_name: string
+}
 
 const categories = [
   'Academic Issues',
@@ -35,6 +30,7 @@ const categories = [
 ]
 
 export function ReclamationForm() {
+  const students: Student[] = studentsData as Student[]
   const [formData, setFormData] = useState<FormData>({
     studentName: '',
     category: '',
@@ -145,24 +141,12 @@ export function ReclamationForm() {
             <span>Select Your Name</span>
             <span className="text-destructive">*</span>
           </label>
-          <select
-            name="studentName"
+          <SearchableSelect
+            students={students}
             value={formData.studentName}
-            onChange={handleInputChange}
-            className={cn(
-              "w-full px-4 py-3 bg-background/60 border-2 border-border rounded-xl",
-              "focus:border-primary focus:ring-4 focus:ring-primary/20 focus:outline-none",
-              "transition-all duration-300 cursor-pointer hover:border-primary/50"
-            )}
-            required
-          >
-            <option value="">-- Choose your name --</option>
-            {students.map((student) => (
-              <option key={student} value={student}>
-                {student}
-              </option>
-            ))}
-          </select>
+            onChange={(value) => setFormData((prev) => ({ ...prev, studentName: value }))}
+            placeholder="Search or select your name..."
+          />
         </motion.div>
 
         {/* Category */}
